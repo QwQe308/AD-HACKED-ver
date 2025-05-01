@@ -474,6 +474,6 @@ Currency.galaxyGeneratorGalaxies = new class extends NumberCurrency {
 
   set value(value) {
     const spent = player.galaxies + GalaxyGenerator.galaxies - value;
-    player.celestials.pelle.galaxyGenerator.spentGalaxies -= spent;
+    player.celestials.pelle.galaxyGenerator.spentGalaxies += spent;
   }
 }();
