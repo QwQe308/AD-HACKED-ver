@@ -82,7 +82,7 @@ export class NormalTimeStudyState extends TimeStudyState {
       if (!auto) ImaginaryUpgrade(19).tryShowWarningModal();
       return false;
     }
-    if (this.costsST()) player.celestials.v.STSpent += this.STCost;
+    if (this.costsST()) player.celestials.v.STSpent -= this.STCost;
     player.timestudy.studies.push(this.id);
     player.requirementChecks.reality.maxStudies = Math.clampMin(player.requirementChecks.reality.maxStudies,
       player.timestudy.studies.length);
