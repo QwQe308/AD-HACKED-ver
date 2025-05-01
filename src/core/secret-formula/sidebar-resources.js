@@ -45,7 +45,7 @@ export const sidebarResources = [
     id: 6,
     optionName: "Total TT",
     isAvailable: () => PlayerProgress.eternityUnlocked(),
-    value: () => player.timestudy.theorem.plus(TimeTheorems.calculateTimeStudiesCost()),
+    value: () => player.timestudy.theorem.sub(TimeTheorems.calculateTimeStudiesCost()),
     formatValue: x => format(x, 2),
     formatClass: "o-sidebar-currency--eternity",
   },

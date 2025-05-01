@@ -355,7 +355,7 @@ Currency.timeTheorems = new class extends DecimalCurrency {
   get value() { return player.timestudy.theorem; }
   set value(value) {
     player.timestudy.theorem = value;
-    player.timestudy.maxTheorem = value.plus(TimeTheorems.calculateTimeStudiesCost());
+    player.timestudy.maxTheorem = value.sub(TimeTheorems.calculateTimeStudiesCost());
   }
 
   get max() { return player.timestudy.maxTheorem; }
