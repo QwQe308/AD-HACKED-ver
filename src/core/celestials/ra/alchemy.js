@@ -215,7 +215,7 @@ class AlchemyReaction {
     for (let i = 0; i < times; i++) {
       const reactionYield = this.actualYield;
       for (const reagent of this._reagents) {
-        reagent.resource.amount -= reactionYield * reagent.cost;
+        reagent.resource.amount = Math.clampMax(reagent.resource.amount + reactionYield * reagent.cost, cap);
       }
       // The minimum reaction yield is 0.05 so the cap is actually reached
       const effectiveYield = Math.clampMin(reactionYield * this.reactionProduction, 0.05);
