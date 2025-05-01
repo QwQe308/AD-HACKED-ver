@@ -240,7 +240,7 @@ export class TimeStudyTree {
       if (checkOnlyStructure) {
         return reqSatisfied && !hasForbiddenStudies;
       }
-      const totalTT = player.timestudy.theorem.plus(TimeTheorems.calculateTimeStudiesCost());
+      const totalTT = player.timestudy.theorem.sub(TimeTheorems.calculateTimeStudiesCost());
       const hasEnoughTT = totalTT.subtract(this.spentTheorems[0]).gte(study.cost);
       const secondaryGoal = Perk.studyECRequirement.isBought || study.isEntryGoalMet;
       return reqSatisfied && !hasForbiddenStudies && (study.isBought || (secondaryGoal && hasEnoughTT));
